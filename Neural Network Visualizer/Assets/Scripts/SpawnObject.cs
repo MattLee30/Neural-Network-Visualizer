@@ -2,23 +2,15 @@ using UnityEngine;
 
 public class SpawnObject : MonoBehaviour
 {
-    public GameObject cubePrefab;
-    public float spawnDistance = 2.0f;
+    public GameManager gameManager;
 
-    void Update() {
-        if (GameManager.spawningMode == false) { return; }
-
-        if (Input.GetKeyDown(KeyCode.Mouse0)) {
-            Vector3 mousePosition = Input.mousePosition;
-            mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, spawnDistance));
-
-            SpawnCube(mousePosition);
+    void OnMouseDown()
+    {
+        // Handle spawning when this object is clicked and in spawning mode
+        if (GameManager.activeMode == GameManager.Mode.Spawning)
+        {
+            Vector3 mousePosition = gameManager.GetMouseWorldPosition(gameManager.spawnDistance);
+            gameManager.SpawnCube(mousePosition);
         }
     }
-
-
-    public void SpawnCube(Vector3 mousePosition){
-        Instantiate(cubePrefab, mousePosition, Quaternion.identity);
-    }
-
 }
