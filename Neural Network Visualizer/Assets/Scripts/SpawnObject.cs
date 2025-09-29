@@ -33,7 +33,74 @@ public class SpawnObject : MonoBehaviour
             return;
         }
 
-        GameObject newObject = Instantiate(spawnObject, position, Quaternion.identity);
+        // Get the bounds of the object to spawn
+        Bounds bounds = GetObjectBounds(spawnObject);
+        float objectHeight = bounds.size.y;
+        float objectRadius = Mathf.Max(bounds.size.x, bounds.size.z) / 2f;
+
+        // Raycast downward to find the ground
+        Vector3 adjustedPosition = position;
+        Ray downRay = new Ray(position + Vector3.up * 100f, Vector3.down);
+        RaycastHit groundHit;
+
+        if (Physics.Raycast(downRay, out groundHit, Mathf.Infinity))
+        {
+            // Position the object on top of the ground
+            adjustedPosition = groundHit.point + Vector3.up * (objectHeight / 2f);
+        }
+        else
+        {
+            // If no ground found, place at y = objectHeight/2 to avoid being below y=0
+            adjustedPosition.y = Mathf.Max(position.y, objectHeight / 2f);
+        }
+
+        // Check if there's already an object at this location
+        Collider[] overlaps = Physics.OverlapSphere(adjustedPosition, objectRadius);
+
+        if (overlaps.Length > 0)
+        {
+            // There are objects nearby, try to find a clear spot
+            bool foundClearSpot = false;
+            float searchRadius = objectRadius * 2f;
+            int maxAttempts = 8;
+
+            for (int i = 0; i < maxAttempts; i++)
+            {
+                float angle = (360f / maxAttempts) * i;
+                Vector3 offset = new Vector3(
+                    Mathf.Cos(angle * Mathf.Deg2Rad) * searchRadius,
+                    0f,
+                    Mathf.Sin(angle * Mathf.Deg2Rad) * searchRadius
+                );
+
+                Vector3 testPosition = adjustedPosition + offset;
+
+                // Raycast down from the test position to find ground
+                Ray testRay = new Ray(testPosition + Vector3.up * 100f, Vector3.down);
+                RaycastHit testGroundHit;
+
+                if (Physics.Raycast(testRay, out testGroundHit, Mathf.Infinity))
+                {
+                    testPosition = testGroundHit.point + Vector3.up * (objectHeight / 2f);
+                }
+
+                Collider[] testOverlaps = Physics.OverlapSphere(testPosition, objectRadius * 0.9f);
+
+                if (testOverlaps.Length == 0)
+                {
+                    adjustedPosition = testPosition;
+                    foundClearSpot = true;
+                    break;
+                }
+            }
+
+            if (!foundClearSpot)
+            {
+                Debug.LogWarning("Could not find clear spot to spawn object. Spawning anyway with slight overlap.");
+            }
+        }
+
+        GameObject newObject = Instantiate(spawnObject, adjustedPosition, Quaternion.identity);
 
         // Make sure the spawned object has the MoveObject script for drag functionality
         if (newObject.GetComponent<MoveObject>() == null)
@@ -47,6 +114,29 @@ public class SpawnObject : MonoBehaviour
             newObject.AddComponent<BoxCollider>();
         }
 
-        Debug.Log($"Spawned {spawnObject.name} at position: {position}");
+        Debug.Log($"Spawned {spawnObject.name} at position: {adjustedPosition}");
+    }
+
+    private Bounds GetObjectBounds(GameObject obj)
+    {
+        Bounds bounds = new Bounds(Vector3.zero, Vector3.one);
+
+        // Try to get bounds from the prefab
+        Renderer renderer = obj.GetComponent<Renderer>();
+        if (renderer != null)
+        {
+            bounds = renderer.bounds;
+        }
+        else
+        {
+            // If no renderer, try to get from collider
+            Collider collider = obj.GetComponent<Collider>();
+            if (collider != null)
+            {
+                bounds = collider.bounds;
+            }
+        }
+
+        return bounds;
     }
 }
