@@ -6,20 +6,41 @@ public class GameManager : MonoBehaviour
     public static Mode activeMode = Mode.None;
 
     [Header("Spawn Settings")]
-    public GameObject cubePrefab;
     public float spawnDistance = 15.0f;
+
+    // Reference to the active SpawnObject that will handle spawning
+    private static SpawnObject activeSpawnObject;
 
     void Update()
     {
         if (activeMode == Mode.Spawning && Input.GetMouseButtonDown(0))
         {
-            Vector3 mousePosition = GetMouseWorldPosition(spawnDistance);
-            SpawnCube(mousePosition);
+            // Check if there's an active SpawnObject to handle the spawn
+            if (activeSpawnObject != null)
+            {
+                Vector3 mousePosition = GetMouseWorldPosition(spawnDistance);
+                activeSpawnObject.HandleSpawn(mousePosition);
+            }
+            else
+            {
+                Debug.LogWarning("No active SpawnObject selected. Click a button to select what to spawn.");
+            }
         }
         else if (activeMode == Mode.Deleting && Input.GetMouseButtonDown(0))
         {
             DeleteObjectAtMouse();
         }
+    }
+
+    public static void SetActiveSpawnObject(SpawnObject spawnObj)
+    {
+        activeSpawnObject = spawnObj;
+        Debug.Log($"Selected spawn object: {spawnObj.spawnObject.name}");
+    }
+
+    public static SpawnObject GetActiveSpawnObject()
+    {
+        return activeSpawnObject;
     }
 
     public void SetSpawningMode()
@@ -43,19 +64,17 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
-
         activeMode = newMode;
-
         switch (activeMode)
         {
             case Mode.Spawning:
-                Debug.Log("Switched to Spawning Mode - Click to spawn cubes");
+                Debug.Log("Switched to Spawning Mode - Click to spawn objects");
                 break;
             case Mode.Deleting:
-                Debug.Log("Switched to Deleting Mode - Click to delete cubes");
+                Debug.Log("Switched to Deleting Mode - Click to delete objects");
                 break;
             case Mode.Moving:
-                Debug.Log("Switched to Moving Mode - Drag cubes to move them");
+                Debug.Log("Switched to Moving Mode - Drag objects to move them");
                 break;
             default:
                 Debug.Log("Unknown Mode");
@@ -63,33 +82,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void SpawnCube(Vector3 position)
-    {
-        GameObject newCube = Instantiate(cubePrefab, position, Quaternion.identity);
-        
-        // Make sure the spawned cube has the MoveObject script for drag functionality
-        if (newCube.GetComponent<MoveObject>() == null)
-        {
-            newCube.AddComponent<MoveObject>();
-        }
-        
-        // Ensure the cube has a collider for mouse detection
-        if (newCube.GetComponent<Collider>() == null)
-        {
-            newCube.AddComponent<BoxCollider>();
-        }
-
-        Debug.Log($"Spawned cube at position: {position}");
-    }
-
     private void DeleteObjectAtMouse()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-
         if (Physics.Raycast(ray, out hit))
         {
-            // Check if the hit object has the MoveObject component (indicating it's a spawned cube)
+            // Check if the hit object has the MoveObject component (indicating it's a spawned object)
             if (hit.collider.GetComponent<MoveObject>() != null)
             {
                 Destroy(hit.collider.gameObject);

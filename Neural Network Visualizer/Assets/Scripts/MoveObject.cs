@@ -20,7 +20,8 @@ public class MoveObject : MonoBehaviour
             Vector3 mouseWorldPos = GetMouseWorldPosition();
             dragOffset = transform.position - mouseWorldPos;
         }
-        else if (GameManager.activeMode == GameManager.Mode.Deleting)
+        else 
+        if (GameManager.activeMode == GameManager.Mode.Deleting)
         {
             Destroy(gameObject);
             Debug.Log("Deleted object: " + gameObject.name);
