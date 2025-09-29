@@ -2,15 +2,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public enum Mode { Spawning, Deleting, Moving }
-    public static Mode activeMode = Mode.Spawning;
+    public enum Mode { Spawning, Deleting, Moving, None }
+    public static Mode activeMode = Mode.None;
 
     [Header("Spawn Settings")]
     public GameObject cubePrefab;
-    public float spawnDistance = 2.0f;
-    
-    [Header("UI References")]
-    public SpawnObject spawnObjectScript;
+    public float spawnDistance = 15.0f;
 
     void Update()
     {
