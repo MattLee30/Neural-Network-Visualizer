@@ -17,11 +17,13 @@ public class MoveObject : MonoBehaviour
         if (GameManager.activeMode == GameManager.Mode.Moving)
         {
             isDragging = true;
-            Vector3 mouseWorldPos = GetMouseWorldPosition();
+
+            dragOffset = transform.position - GameManager.current.GetMouseWorldPosition();
+
+            Vector3 mouseWorldPos = GameManager.current.GetMouseWorldPosition();
             dragOffset = transform.position - mouseWorldPos;
         }
-        else 
-        if (GameManager.activeMode == GameManager.Mode.Deleting)
+        else if (GameManager.activeMode == GameManager.Mode.Deleting)
         {
             Destroy(gameObject);
             Debug.Log("Deleted object: " + gameObject.name);
@@ -32,20 +34,13 @@ public class MoveObject : MonoBehaviour
     {
         if (isDragging && GameManager.activeMode == GameManager.Mode.Moving)
         {
-            Vector3 mouseWorldPos = GetMouseWorldPosition();
-            transform.position = mouseWorldPos + dragOffset;
+            Vector3 pos = GameManager.current.GetMouseWorldPosition() + dragOffset;
+            transform.position = BuildingSystem.current.SnapCoordinateToGrid(pos);
         }
     }
 
     void OnMouseUp()
     {
         isDragging = false;
-    }
-
-    private Vector3 GetMouseWorldPosition()
-    {
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition.z = mainCamera.WorldToScreenPoint(transform.position).z;
-        return mainCamera.ScreenToWorldPoint(mousePosition);
     }
 }
