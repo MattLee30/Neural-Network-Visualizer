@@ -2,14 +2,19 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager current;
+
     public enum Mode { Spawning, Deleting, Moving, None }
     public static Mode activeMode = Mode.None;
 
     [Header("Spawn Settings")]
     public float spawnDistance = 15.0f;
 
-    // Reference to the active SpawnObject that will handle spawning
-    private static SpawnObject activeSpawnObject;
+    private static GameObject activeSpawnObject;
+
+    private void Awake() {
+        current = this;
+    }
 
     void Update()
     {
@@ -18,8 +23,9 @@ public class GameManager : MonoBehaviour
             // Check if there's an active SpawnObject to handle the spawn
             if (activeSpawnObject != null)
             {
-                Vector3 mousePosition = GetMouseWorldPosition(spawnDistance);
-                activeSpawnObject.HandleSpawn(mousePosition);
+                Vector3 mousePosition = GetMouseWorldPosition();
+                BuildingSystem.current.handleSpawn(activeSpawnObject);
+                // SpawnObject.handleSpawn(activeSpawnObject);
             }
             else
             {
@@ -32,13 +38,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public static void SetActiveSpawnObject(SpawnObject spawnObj)
+    public static void SetActiveSpawnObject(GameObject spawnObj)
     {
         activeSpawnObject = spawnObj;
-        Debug.Log($"Selected spawn object: {spawnObj.spawnObject.name}");
+        Debug.Log($"Selected spawn object: {spawnObj.name}");
     }
 
-    public static SpawnObject GetActiveSpawnObject()
+    public static GameObject GetActiveSpawnObject()
     {
         return activeSpawnObject;
     }
@@ -97,15 +103,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public Vector3 GetMouseWorldPosition(float distance)
+    public Vector3 GetMouseWorldPosition()
     {
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, distance));
-        return mousePosition;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hitInfo))
+        {
+            return hitInfo.point;
+        }
+        else
+        {
+            return Vector3.zero;
+        }
     }
 
-    public Vector3 IsometricCameraPos(float distance)
-    {
-        return GetMouseWorldPosition(distance);
-    }
+    
 }
