@@ -12,9 +12,9 @@ public class GameManager : MonoBehaviour
 
     [Header("Camera Settings")]
     public Transform cameraTransform;
-    public float rotationDuration = 0.5f; // Duration of rotation in seconds
-    public float movementDuration = 0.3f; // Duration of movement in seconds
-    public float movementIncrement = 2.5f; // Distance to move per key press
+    public float rotationDuration = 0.5f; 
+    public float movementDuration = 0.3f; 
+    public float movementIncrement = 2.5f; 
 
     private static GameObject activeSpawnObject;
     private Quaternion startRotation;
@@ -50,12 +50,10 @@ public class GameManager : MonoBehaviour
 
         if (activeMode == Mode.Spawning && Input.GetMouseButtonDown(0))
         {
-            // Check if there's an active SpawnObject to handle the spawn
             if (activeSpawnObject != null)
             {
                 Vector3 mousePosition = GetMouseWorldPosition();
                 BuildingSystem.current.handleSpawn(activeSpawnObject);
-                // SpawnObject.handleSpawn(activeSpawnObject);
             }
             else
             {
@@ -70,12 +68,10 @@ public class GameManager : MonoBehaviour
 
     private void HandleCameraMovement()
     {
-        // Only accept new movement input if not currently moving
         if (!isMoving)
         {
             Vector3 moveDirection = Vector3.zero;
             
-            // Get camera's forward and right directions (projected on XZ plane)
             Vector3 forward = cameraTransform.forward;
             forward.y = 0;
             forward.Normalize();
@@ -101,7 +97,6 @@ public class GameManager : MonoBehaviour
                 moveDirection = right * movementIncrement;
             }
             
-            // If a direction was pressed, start moving
             if (moveDirection != Vector3.zero)
             {
                 startPosition = cameraTransform.position;
@@ -111,7 +106,6 @@ public class GameManager : MonoBehaviour
             }
         }
         
-        // Smoothly interpolate to target position
         if (isMoving)
         {
             movementProgress += Time.deltaTime / movementDuration;
@@ -122,7 +116,6 @@ public class GameManager : MonoBehaviour
                 movementProgress
             );
             
-            // Check if movement is complete
             if (movementProgress >= 1f)
             {
                 cameraTransform.position = targetPosition;
@@ -133,26 +126,21 @@ public class GameManager : MonoBehaviour
 
     private void HandleCameraRotation()
     {
-        // Rotate camera left (Q key)
         if (Input.GetKeyDown(KeyCode.Q) && !isRotating)
         {
             startRotation = cameraTransform.rotation;
-            // Rotate around world Y-axis (up) to maintain isometric angle
             targetRotation = Quaternion.Euler(0, -90, 0) * startRotation;
             isRotating = true;
             rotationProgress = 0f;
         }
-        // Rotate camera right (E key)
         else if (Input.GetKeyDown(KeyCode.E) && !isRotating)
         {
             startRotation = cameraTransform.rotation;
-            // Rotate around world Y-axis (up) to maintain isometric angle
             targetRotation = Quaternion.Euler(0, 90, 0) * startRotation;
             isRotating = true;
             rotationProgress = 0f;
         }
 
-        // Smoothly interpolate to target rotation
         if (isRotating)
         {
             rotationProgress += Time.deltaTime / rotationDuration;
