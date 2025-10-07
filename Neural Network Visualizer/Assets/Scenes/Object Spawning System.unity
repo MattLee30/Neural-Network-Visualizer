@@ -1016,18 +1016,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 747797160}
-        m_TargetAssemblyTypeName: SpawnObject, Assembly-CSharp
-        m_MethodName: handleSpawn
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 4805143200992473185, guid: 483d90b5faf964aa9bd09cad1f4bb621, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &747797158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1435,18 +1423,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 765295140}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: SetActiveSpawnObject
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 996403848558592656, guid: 637e7273f82b09443b1a58c61cd9ee66, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 993880021}
         m_TargetAssemblyTypeName: SpawnObject, Assembly-CSharp
         m_MethodName: handleSpawn
@@ -1862,6 +1838,7 @@ MonoBehaviour:
   gridLayout: {fileID: 1217821051}
   mainTilemap: {fileID: 531966001}
   whiteTile: {fileID: 0}
+  previewObject: {fileID: 3285282552412041176, guid: b1f87363c1154497786d7df16f9880d7, type: 3}
 --- !u!1 &1437844511
 GameObject:
   m_ObjectHideFlags: 0

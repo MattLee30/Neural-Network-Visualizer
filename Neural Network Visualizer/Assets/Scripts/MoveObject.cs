@@ -5,12 +5,6 @@ public class MoveObject : MonoBehaviour
 {
     private bool isDragging = false;
     private Vector3 dragOffset;
-    private Camera mainCamera;
-
-    void Start()
-    {
-        mainCamera = Camera.main;
-    }
 
     void OnMouseDown()
     {
