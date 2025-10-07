@@ -156,10 +156,10 @@ public class GameManager : MonoBehaviour
         if (isRotating)
         {
             rotationProgress += Time.deltaTime / rotationDuration;
-            
+
             cameraTransform.rotation = Quaternion.Slerp(
-                startRotation, 
-                targetRotation, 
+                startRotation,
+                targetRotation,
                 rotationProgress
             );
 
