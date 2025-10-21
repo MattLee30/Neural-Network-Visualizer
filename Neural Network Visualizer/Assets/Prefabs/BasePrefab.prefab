@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6016819108133017841}
   - component: {fileID: 1123152802375097472}
   m_Layer: 0
-  m_Name: TestCube
+  m_Name: BasePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
