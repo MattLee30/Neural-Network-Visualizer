@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3286956035896966676}
   - component: {fileID: 7502519219685279296}
   m_Layer: 0
-  m_Name: Downsampling Prefab
+  m_Name: Convolution Layer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
