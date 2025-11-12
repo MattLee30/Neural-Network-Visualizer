@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: -1
-    y: 67
-    width: 1920
-    height: 997
+    x: 0
+    y: 36
+    width: 1470
+    height: 920
   m_ShowMode: 4
-  m_Title: Console
+  m_Title: Test Runner
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -44,8 +44,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1920
-    height: 997
+    width: 1470
+    height: 920
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
@@ -69,7 +69,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1920
+    width: 1470
     height: 36
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -90,8 +90,8 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 977
-    width: 1920
+    y: 900
+    width: 1470
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -114,12 +114,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 36
-    width: 1920
-    height: 941
+    width: 1470
+    height: 864
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 40
+  controlID: 19
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -140,12 +140,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1469
-    height: 941
+    width: 1125.5
+    height: 864
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 41
+  controlID: 68
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -166,12 +166,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1469
-    height: 593
+    width: 1125.5
+    height: 544.5
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 42
+  controlID: 69
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -190,13 +190,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 359
-    height: 593
+    width: 275
+    height: 544.5
   m_MinSize: {x: 201, y: 226}
   m_MaxSize: {x: 4001, y: 4026}
-  m_ActualView: {fileID: 14}
+  m_ActualView: {fileID: 15}
   m_Panes:
-  - {fileID: 14}
+  - {fileID: 15}
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &9
@@ -214,19 +214,19 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 359
+    x: 275
     y: 0
-    width: 1110
-    height: 593
+    width: 850.5
+    height: 544.5
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 13}
+  m_ActualView: {fileID: 14}
   m_Panes:
+  - {fileID: 14}
+  - {fileID: 16}
   - {fileID: 13}
-  - {fileID: 15}
-  - {fileID: 12}
   m_Selected: 0
-  m_LastSelected: 2
+  m_LastSelected: 1
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -237,23 +237,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 593
-    width: 1469
-    height: 348
-  m_MinSize: {x: 101, y: 126}
-  m_MaxSize: {x: 4001, y: 4026}
+    y: 544.5
+    width: 1125.5
+    height: 319.5
+  m_MinSize: {x: 231, y: 276}
+  m_MaxSize: {x: 10001, y: 10026}
   m_ActualView: {fileID: 17}
   m_Panes:
-  - {fileID: 16}
   - {fileID: 17}
-  m_Selected: 1
-  m_LastSelected: 0
+  - {fileID: 18}
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -264,23 +264,1215 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: InspectorWindow
+  m_Name: TestRunnerWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1469
+    x: 1125.5
     y: 0
-    width: 451
-    height: 941
-  m_MinSize: {x: 276, y: 76}
+    width: 344.5
+    height: 864
+  m_MinSize: {x: 51, y: 76}
   m_MaxSize: {x: 4001, y: 4026}
-  m_ActualView: {fileID: 18}
+  m_ActualView: {fileID: 12}
   m_Panes:
-  - {fileID: 18}
-  m_Selected: 0
-  m_LastSelected: 1
+  - {fileID: 19}
+  - {fileID: 12}
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &12
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13401, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEditor.TestRunner.dll::UnityEditor.TestTools.TestRunner.TestRunnerWindow
+  m_MinSize: {x: 50, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Test Runner
+    m_Image: {fileID: 0}
+    m_Tooltip: Test framework for running Edit mode and Play mode tests in Unity.
+      Part of the com.unity.test-framework package.
+    m_TextWithWhitespace: "Test Runner\u200B"
+  m_Pos:
+    serializedVersion: 2
+    x: 1125.5
+    y: 72
+    width: 343.5
+    height: 838
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_ContainerData: []
+    m_OverlaysVisible: 1
+  m_Spl:
+    ID: 8204
+    splitterInitialOffset: 0
+    currentActiveSplitter: -1
+    realSizes:
+    - 576
+    - 192
+    relativeSizes:
+    - 0.75
+    - 0.25
+    minSizes:
+    - 32
+    - 32
+    maxSizes:
+    - 0
+    - 0
+    lastTotalSize: 768
+    splitSize: 6
+    xOffset: 0
+    m_Version: 1
+    oldRealSizes: 
+    oldMinSizes: 
+    oldMaxSizes: 
+    oldSplitSize: 0
+  m_TestTypeToolbarIndex: 0
+  m_TestListGUIs:
+  - m_Window: {fileID: 12}
+    runProgress:
+      RunGuid: 56a95d9a-123f-4cd8-bede-acf857ca58bd
+      ExecutionSettings:
+        m_TargetPlatform: 0
+        m_HasTargetPlatform: 0
+        filter:
+          testMode: 0
+          testNames: []
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        filters:
+        - testMode: 1
+          testNames: []
+          groupNames:
+          - .*
+          categoryNames: []
+          assemblyNames: []
+        runSynchronously: 0
+        playerHeartbeatTimeout: 600
+        orderedTestNames: []
+        ignoreTests: []
+        featureFlags:
+          fileCleanUpCheck: 0
+          requiresSplashScreen: 0
+          strictDomainReload: 0
+          disableNestedEnumeratorBugfix: 0
+        randomOrderSeed: 0
+      HasFinished: 1
+      Progress: 1.0000004
+      CurrentStepName: Unlock Reload Assemblies
+      CurrentStageName: 
+    m_NewResultList:
+    - id: 1000
+      uniqueId: '[Neural Network Visualizer][suite]'
+      name: Neural Network Visualizer
+      fullName: Neural Network Visualizer
+      resultStatus: 1
+      duration: 0.0237437
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    - id: 1047
+      uniqueId: '[Tests][/Users/matthewlee/Documents/GitHub/Neural-Network-Visualizer/Neural
+        Network Visualizer/Library/ScriptAssemblies/Tests.dll][suite]'
+      name: Tests.dll
+      fullName: /Users/matthewlee/Documents/GitHub/Neural-Network-Visualizer/Neural
+        Network Visualizer/Library/ScriptAssemblies/Tests.dll
+      resultStatus: 1
+      duration: 0.0237437
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1051
+      parentUniqueId: '[Neural Network Visualizer][suite]'
+    - id: 1001
+      uniqueId: 'Tests.dll/[Tests][ActivationFunctionTests][suite]'
+      name: ActivationFunctionTests
+      fullName: ActivationFunctionTests
+      resultStatus: 1
+      duration: 0.012959301
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1047
+      parentUniqueId: '[Tests][/Users/matthewlee/Documents/GitHub/Neural-Network-Visualizer/Neural
+        Network Visualizer/Library/ScriptAssemblies/Tests.dll][suite]'
+    - id: 1019
+      uniqueId: 'Tests.dll/ActivationFunctionTests/[Tests][ActivationFunctionTests.GetActivationType_ReLU_ReturnsReLUInstance]'
+      name: GetActivationType_ReLU_ReturnsReLUInstance
+      fullName: ActivationFunctionTests.GetActivationType_ReLU_ReturnsReLUInstance
+      resultStatus: 1
+      duration: 0.0083804
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: 'Tests.dll/[Tests][ActivationFunctionTests][suite]'
+    - id: 1020
+      uniqueId: 'Tests.dll/ActivationFunctionTests/[Tests][ActivationFunctionTests.GetActivationType_Sigmoid_ReturnsSigmoidInstance]'
+      name: GetActivationType_Sigmoid_ReturnsSigmoidInstance
+      fullName: ActivationFunctionTests.GetActivationType_Sigmoid_ReturnsSigmoidInstance
+      resultStatus: 1
+      duration: 0.0001128
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: 'Tests.dll/[Tests][ActivationFunctionTests][suite]'
+    - id: 1021
+      uniqueId: 'Tests.dll/ActivationFunctionTests/[Tests][ActivationFunctionTests.GetActivationType_Softmax_ReturnsSoftmaxInstance]'
+      name: GetActivationType_Softmax_ReturnsSoftmaxInstance
+      fullName: ActivationFunctionTests.GetActivationType_Softmax_ReturnsSoftmaxInstance
+      resultStatus: 1
+      duration: 0.0000695
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: 'Tests.dll/[Tests][ActivationFunctionTests][suite]'
+    - id: 1006
+      uniqueId: 'Tests.dll/ActivationFunctionTests/[Tests][ActivationFunctionTests.ReLU_Derivative_NegativeInput_ReturnsZero]'
+      name: ReLU_Derivative_NegativeInput_ReturnsZero
+      fullName: ActivationFunctionTests.ReLU_Derivative_NegativeInput_ReturnsZero
+      resultStatus: 1
+      duration: 0.0022164
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: 'Tests.dll/[Tests][ActivationFunctionTests][suite]'
+    - id: 1005
+      uniqueId: 'Tests.dll/ActivationFunctionTests/[Tests][ActivationFunctionTests.ReLU_Derivative_PositiveInput_ReturnsOne]'
+      name: ReLU_Derivative_PositiveInput_ReturnsOne
+      fullName: ActivationFunctionTests.ReLU_Derivative_PositiveInput_ReturnsOne
+      resultStatus: 1
+      duration: 0.0000818
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: 'Tests.dll/[Tests][ActivationFunctionTests][suite]'
+    - id: 1023
+      uniqueId: 'Tests.dll/ActivationFunctionTests/[Tests][ActivationFunctionTests.ReLU_ExtremelyLargeNegative_ReturnsZero]'
+      name: ReLU_ExtremelyLargeNegative_ReturnsZero
+      fullName: ActivationFunctionTests.ReLU_ExtremelyLargeNegative_ReturnsZero
+      resultStatus: 1
+      duration: 0.0001085
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: 'Tests.dll/[Tests][ActivationFunctionTests][suite]'
+    - id: 1022
+      uniqueId: 'Tests.dll/ActivationFunctionTests/[Tests][ActivationFunctionTests.ReLU_ExtremelyLargePositive_HandlesCorrectly]'
+      name: ReLU_ExtremelyLargePositive_HandlesCorrectly
+      fullName: ActivationFunctionTests.ReLU_ExtremelyLargePositive_HandlesCorrectly
+      resultStatus: 1
+      duration: 0.0001401
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: 'Tests.dll/[Tests][ActivationFunctionTests][suite]'
+    - id: 1003
+      uniqueId: 'Tests.dll/ActivationFunctionTests/[Tests][ActivationFunctionTests.ReLU_NegativeInput_ReturnsZero]'
+      name: ReLU_NegativeInput_ReturnsZero
+      fullName: ActivationFunctionTests.ReLU_NegativeInput_ReturnsZero
+      resultStatus: 1
+      duration: 0.0001081
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: 'Tests.dll/[Tests][ActivationFunctionTests][suite]'
+    - id: 1002
+      uniqueId: 'Tests.dll/ActivationFunctionTests/[Tests][ActivationFunctionTests.ReLU_PositiveInput_ReturnsInput]'
+      name: ReLU_PositiveInput_ReturnsInput
+      fullName: ActivationFunctionTests.ReLU_PositiveInput_ReturnsInput
+      resultStatus: 1
+      duration: 0.0000904
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: 'Tests.dll/[Tests][ActivationFunctionTests][suite]'
+    - id: 1004
+      uniqueId: 'Tests.dll/ActivationFunctionTests/[Tests][ActivationFunctionTests.ReLU_ZeroInput_ReturnsZero]'
+      name: ReLU_ZeroInput_ReturnsZero
+      fullName: ActivationFunctionTests.ReLU_ZeroInput_ReturnsZero
+      resultStatus: 1
+      duration: 0.0000533
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: 'Tests.dll/[Tests][ActivationFunctionTests][suite]'
+    - id: 1012
+      uniqueId: 'Tests.dll/ActivationFunctionTests/[Tests][ActivationFunctionTests.Sigmoid_Derivative_MatchesFormula]'
+      name: Sigmoid_Derivative_MatchesFormula
+      fullName: ActivationFunctionTests.Sigmoid_Derivative_MatchesFormula
+      resultStatus: 1
+      duration: 0.0001366
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: 'Tests.dll/[Tests][ActivationFunctionTests][suite]'
+    - id: 1011
+      uniqueId: 'Tests.dll/ActivationFunctionTests/[Tests][ActivationFunctionTests.Sigmoid_Derivative_ZeroInput_ReturnsQuarter]'
+      name: Sigmoid_Derivative_ZeroInput_ReturnsQuarter
+      fullName: ActivationFunctionTests.Sigmoid_Derivative_ZeroInput_ReturnsQuarter
+      resultStatus: 1
+      duration: 0.0000458
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: 'Tests.dll/[Tests][ActivationFunctionTests][suite]'
+    - id: 1025
+      uniqueId: 'Tests.dll/ActivationFunctionTests/[Tests][ActivationFunctionTests.Sigmoid_ExtremelyLargeNegative_ApproachesZero]'
+      name: Sigmoid_ExtremelyLargeNegative_ApproachesZero
+      fullName: ActivationFunctionTests.Sigmoid_ExtremelyLargeNegative_ApproachesZero
+      resultStatus: 1
+      duration: 0.0006422
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: 'Tests.dll/[Tests][ActivationFunctionTests][suite]'
+    - id: 1024
+      uniqueId: 'Tests.dll/ActivationFunctionTests/[Tests][ActivationFunctionTests.Sigmoid_ExtremelyLargePositive_ApproachesOne]'
+      name: Sigmoid_ExtremelyLargePositive_ApproachesOne
+      fullName: ActivationFunctionTests.Sigmoid_ExtremelyLargePositive_ApproachesOne
+      resultStatus: 1
+      duration: 0.0001487
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: 'Tests.dll/[Tests][ActivationFunctionTests][suite]'
+    - id: 1010
+      uniqueId: 'Tests.dll/ActivationFunctionTests/[Tests][ActivationFunctionTests.Sigmoid_KnownValues_ReturnsCorrectResults]'
+      name: Sigmoid_KnownValues_ReturnsCorrectResults
+      fullName: ActivationFunctionTests.Sigmoid_KnownValues_ReturnsCorrectResults
+      resultStatus: 1
+      duration: 0.0000581
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: 'Tests.dll/[Tests][ActivationFunctionTests][suite]'
+    - id: 1009
+      uniqueId: 'Tests.dll/ActivationFunctionTests/[Tests][ActivationFunctionTests.Sigmoid_NegativeInput_ReturnsBetweenZeroAndHalf]'
+      name: Sigmoid_NegativeInput_ReturnsBetweenZeroAndHalf
+      fullName: ActivationFunctionTests.Sigmoid_NegativeInput_ReturnsBetweenZeroAndHalf
+      resultStatus: 1
+      duration: 0.0000668
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: 'Tests.dll/[Tests][ActivationFunctionTests][suite]'
+    - id: 1008
+      uniqueId: 'Tests.dll/ActivationFunctionTests/[Tests][ActivationFunctionTests.Sigmoid_PositiveInput_ReturnsBetweenHalfAndOne]'
+      name: Sigmoid_PositiveInput_ReturnsBetweenHalfAndOne
+      fullName: ActivationFunctionTests.Sigmoid_PositiveInput_ReturnsBetweenHalfAndOne
+      resultStatus: 1
+      duration: 0.0000598
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: 'Tests.dll/[Tests][ActivationFunctionTests][suite]'
+    - id: 1007
+      uniqueId: 'Tests.dll/ActivationFunctionTests/[Tests][ActivationFunctionTests.Sigmoid_ZeroInput_ReturnsHalf]'
+      name: Sigmoid_ZeroInput_ReturnsHalf
+      fullName: ActivationFunctionTests.Sigmoid_ZeroInput_ReturnsHalf
+      resultStatus: 1
+      duration: 0.0000454
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: 'Tests.dll/[Tests][ActivationFunctionTests][suite]'
+    - id: 1018
+      uniqueId: 'Tests.dll/ActivationFunctionTests/[Tests][ActivationFunctionTests.Softmax_Derivative_ReturnsPositiveValues]'
+      name: Softmax_Derivative_ReturnsPositiveValues
+      fullName: ActivationFunctionTests.Softmax_Derivative_ReturnsPositiveValues
+      resultStatus: 1
+      duration: 0.0000841
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: 'Tests.dll/[Tests][ActivationFunctionTests][suite]'
+    - id: 1014
+      uniqueId: 'Tests.dll/ActivationFunctionTests/[Tests][ActivationFunctionTests.Softmax_EqualInputs_ReturnsEqualProbabilities]'
+      name: Softmax_EqualInputs_ReturnsEqualProbabilities
+      fullName: ActivationFunctionTests.Softmax_EqualInputs_ReturnsEqualProbabilities
+      resultStatus: 1
+      duration: 0.0000859
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: 'Tests.dll/[Tests][ActivationFunctionTests][suite]'
+    - id: 1017
+      uniqueId: 'Tests.dll/ActivationFunctionTests/[Tests][ActivationFunctionTests.Softmax_KnownValues_ReturnsCorrectResults]'
+      name: Softmax_KnownValues_ReturnsCorrectResults
+      fullName: ActivationFunctionTests.Softmax_KnownValues_ReturnsCorrectResults
+      resultStatus: 1
+      duration: 0.0000723
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: 'Tests.dll/[Tests][ActivationFunctionTests][suite]'
+    - id: 1015
+      uniqueId: 'Tests.dll/ActivationFunctionTests/[Tests][ActivationFunctionTests.Softmax_LargerInputGivesLargerOutput]'
+      name: Softmax_LargerInputGivesLargerOutput
+      fullName: ActivationFunctionTests.Softmax_LargerInputGivesLargerOutput
+      resultStatus: 1
+      duration: 0.0000529
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: 'Tests.dll/[Tests][ActivationFunctionTests][suite]'
+    - id: 1026
+      uniqueId: 'Tests.dll/ActivationFunctionTests/[Tests][ActivationFunctionTests.Softmax_NegativeInputs_WorksCorrectly]'
+      name: Softmax_NegativeInputs_WorksCorrectly
+      fullName: ActivationFunctionTests.Softmax_NegativeInputs_WorksCorrectly
+      resultStatus: 1
+      duration: 0.0000507
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: 'Tests.dll/[Tests][ActivationFunctionTests][suite]'
+    - id: 1013
+      uniqueId: 'Tests.dll/ActivationFunctionTests/[Tests][ActivationFunctionTests.Softmax_OutputsSumToOne]'
+      name: Softmax_OutputsSumToOne
+      fullName: ActivationFunctionTests.Softmax_OutputsSumToOne
+      resultStatus: 1
+      duration: 0.0000487
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: 'Tests.dll/[Tests][ActivationFunctionTests][suite]'
+    - id: 1026
+      uniqueId: 'Tests.dll/[Tests][LayerTests][suite]'
+      name: LayerTests
+      fullName: LayerTests
+      resultStatus: 1
+      duration: 0.0107844
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1047
+      parentUniqueId: '[Tests][/Users/matthewlee/Documents/GitHub/Neural-Network-Visualizer/Neural
+        Network Visualizer/Library/ScriptAssemblies/Tests.dll][suite]'
+    - id: 1039
+      uniqueId: 'Tests.dll/LayerTests/[Tests][LayerTests.Layer_ApplyGradients_ResetsGradients]'
+      name: Layer_ApplyGradients_ResetsGradients
+      fullName: LayerTests.Layer_ApplyGradients_ResetsGradients
+      resultStatus: 1
+      duration: 0.0020784
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1027
+      parentUniqueId: 'Tests.dll/[Tests][LayerTests][suite]'
+    - id: 1038
+      uniqueId: 'Tests.dll/LayerTests/[Tests][LayerTests.Layer_ApplyGradients_UpdatesWeights]'
+      name: Layer_ApplyGradients_UpdatesWeights
+      fullName: LayerTests.Layer_ApplyGradients_UpdatesWeights
+      resultStatus: 1
+      duration: 0.001143
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1027
+      parentUniqueId: 'Tests.dll/[Tests][LayerTests][suite]'
+    - id: 1040
+      uniqueId: 'Tests.dll/LayerTests/[Tests][LayerTests.Layer_ApplyGradients_WithMomentum_UsesVelocity]'
+      name: Layer_ApplyGradients_WithMomentum_UsesVelocity
+      fullName: LayerTests.Layer_ApplyGradients_WithMomentum_UsesVelocity
+      resultStatus: 1
+      duration: 0.0003605
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1027
+      parentUniqueId: 'Tests.dll/[Tests][LayerTests][suite]'
+    - id: 1041
+      uniqueId: 'Tests.dll/LayerTests/[Tests][LayerTests.Layer_ApplyGradients_WithRegularization_DecaysWeights]'
+      name: Layer_ApplyGradients_WithRegularization_DecaysWeights
+      fullName: LayerTests.Layer_ApplyGradients_WithRegularization_DecaysWeights
+      resultStatus: 1
+      duration: 0.0003448
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1027
+      parentUniqueId: 'Tests.dll/[Tests][LayerTests][suite]'
+    - id: 1043
+      uniqueId: 'Tests.dll/LayerTests/[Tests][LayerTests.Layer_CalculateHiddenLayerNodeValues_PropagatesErrorBackward]'
+      name: Layer_CalculateHiddenLayerNodeValues_PropagatesErrorBackward
+      fullName: LayerTests.Layer_CalculateHiddenLayerNodeValues_PropagatesErrorBackward
+      resultStatus: 1
+      duration: 0.000925
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+        You are trying to create a MonoBehaviour using the ''new''
+        keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1027
+      parentUniqueId: 'Tests.dll/[Tests][LayerTests][suite]'
+    - id: 1042
+      uniqueId: 'Tests.dll/LayerTests/[Tests][LayerTests.Layer_CalculateOutputLayerNodeValues_ComputesCorrectDerivatives]'
+      name: Layer_CalculateOutputLayerNodeValues_ComputesCorrectDerivatives
+      fullName: LayerTests.Layer_CalculateOutputLayerNodeValues_ComputesCorrectDerivatives
+      resultStatus: 1
+      duration: 0.0004147
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1027
+      parentUniqueId: 'Tests.dll/[Tests][LayerTests][suite]'
+    - id: 1031
+      uniqueId: 'Tests.dll/LayerTests/[Tests][LayerTests.Layer_CalculateOutputs_ProducesCorrectShape]'
+      name: Layer_CalculateOutputs_ProducesCorrectShape
+      fullName: LayerTests.Layer_CalculateOutputs_ProducesCorrectShape
+      resultStatus: 1
+      duration: 0.0003682
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1027
+      parentUniqueId: 'Tests.dll/[Tests][LayerTests][suite]'
+    - id: 1047
+      uniqueId: 'Tests.dll/LayerTests/[Tests][LayerTests.Layer_CalculateOutputs_ProducesValidActivations]'
+      name: Layer_CalculateOutputs_ProducesValidActivations
+      fullName: LayerTests.Layer_CalculateOutputs_ProducesValidActivations
+      resultStatus: 1
+      duration: 0.0003328
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1027
+      parentUniqueId: 'Tests.dll/[Tests][LayerTests][suite]'
+    - id: 1032
+      uniqueId: 'Tests.dll/LayerTests/[Tests][LayerTests.Layer_CalculateOutputs_WithLearnData_StoresIntermediateValues]'
+      name: Layer_CalculateOutputs_WithLearnData_StoresIntermediateValues
+      fullName: LayerTests.Layer_CalculateOutputs_WithLearnData_StoresIntermediateValues
+      resultStatus: 1
+      duration: 0.0003823
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1027
+      parentUniqueId: 'Tests.dll/[Tests][LayerTests][suite]'
+    - id: 1033
+      uniqueId: 'Tests.dll/LayerTests/[Tests][LayerTests.Layer_CalculateOutputs_WithZeroInputs_ProducesBiasedOutputs]'
+      name: Layer_CalculateOutputs_WithZeroInputs_ProducesBiasedOutputs
+      fullName: LayerTests.Layer_CalculateOutputs_WithZeroInputs_ProducesBiasedOutputs
+      resultStatus: 1
+      duration: 0.0003031
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1027
+      parentUniqueId: 'Tests.dll/[Tests][LayerTests][suite]'
+    - id: 1030
+      uniqueId: 'Tests.dll/LayerTests/[Tests][LayerTests.Layer_Constructor_InitializesBiasesToZero]'
+      name: Layer_Constructor_InitializesBiasesToZero
+      fullName: LayerTests.Layer_Constructor_InitializesBiasesToZero
+      resultStatus: 1
+      duration: 0.0003091
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1027
+      parentUniqueId: 'Tests.dll/[Tests][LayerTests][suite]'
+    - id: 1028
+      uniqueId: 'Tests.dll/LayerTests/[Tests][LayerTests.Layer_Constructor_InitializesCorrectDimensions]'
+      name: Layer_Constructor_InitializesCorrectDimensions
+      fullName: LayerTests.Layer_Constructor_InitializesCorrectDimensions
+      resultStatus: 1
+      duration: 0.0003404
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1027
+      parentUniqueId: 'Tests.dll/[Tests][LayerTests][suite]'
+    - id: 1029
+      uniqueId: 'Tests.dll/LayerTests/[Tests][LayerTests.Layer_Constructor_InitializesWeightsWithRandomValues]'
+      name: Layer_Constructor_InitializesWeightsWithRandomValues
+      fullName: LayerTests.Layer_Constructor_InitializesWeightsWithRandomValues
+      resultStatus: 1
+      duration: 0.0004248
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1027
+      parentUniqueId: 'Tests.dll/[Tests][LayerTests][suite]'
+    - id: 1035
+      uniqueId: 'Tests.dll/LayerTests/[Tests][LayerTests.Layer_GetFlatWeightIndex_CalculatesCorrectIndex]'
+      name: Layer_GetFlatWeightIndex_CalculatesCorrectIndex
+      fullName: LayerTests.Layer_GetFlatWeightIndex_CalculatesCorrectIndex
+      resultStatus: 1
+      duration: 0.0003534
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1027
+      parentUniqueId: 'Tests.dll/[Tests][LayerTests][suite]'
+    - id: 1034
+      uniqueId: 'Tests.dll/LayerTests/[Tests][LayerTests.Layer_GetWeight_ReturnsCorrectWeight]'
+      name: Layer_GetWeight_ReturnsCorrectWeight
+      fullName: LayerTests.Layer_GetWeight_ReturnsCorrectWeight
+      resultStatus: 1
+      duration: 0.0003125
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1027
+      parentUniqueId: 'Tests.dll/[Tests][LayerTests][suite]'
+    - id: 1046
+      uniqueId: 'Tests.dll/LayerTests/[Tests][LayerTests.Layer_InitializeRandomWeights_UsesNormalDistribution]'
+      name: Layer_InitializeRandomWeights_UsesNormalDistribution
+      fullName: LayerTests.Layer_InitializeRandomWeights_UsesNormalDistribution
+      resultStatus: 1
+      duration: 0.0005668
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+        You are trying to create a MonoBehaviour using the ''new''
+        keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1027
+      parentUniqueId: 'Tests.dll/[Tests][LayerTests][suite]'
+    - id: 1044
+      uniqueId: 'Tests.dll/LayerTests/[Tests][LayerTests.Layer_SetActivationFunction_ChangesActivation]'
+      name: Layer_SetActivationFunction_ChangesActivation
+      fullName: LayerTests.Layer_SetActivationFunction_ChangesActivation
+      resultStatus: 1
+      duration: 0.000732
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1027
+      parentUniqueId: 'Tests.dll/[Tests][LayerTests][suite]'
+    - id: 1036
+      uniqueId: 'Tests.dll/LayerTests/[Tests][LayerTests.Layer_UpdateGradients_AccumulatesGradients]'
+      name: Layer_UpdateGradients_AccumulatesGradients
+      fullName: LayerTests.Layer_UpdateGradients_AccumulatesGradients
+      resultStatus: 1
+      duration: 0.0004506
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1027
+      parentUniqueId: 'Tests.dll/[Tests][LayerTests][suite]'
+    - id: 1037
+      uniqueId: 'Tests.dll/LayerTests/[Tests][LayerTests.Layer_UpdateGradients_AccumulatesMultipleCalls]'
+      name: Layer_UpdateGradients_AccumulatesMultipleCalls
+      fullName: LayerTests.Layer_UpdateGradients_AccumulatesMultipleCalls
+      resultStatus: 1
+      duration: 0.00033
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1027
+      parentUniqueId: 'Tests.dll/[Tests][LayerTests][suite]'
+    - id: 1045
+      uniqueId: 'Tests.dll/LayerTests/[Tests][LayerTests.LayerLearnData_Constructor_InitializesCorrectSizes]'
+      name: LayerLearnData_Constructor_InitializesCorrectSizes
+      fullName: LayerTests.LayerLearnData_Constructor_InitializesCorrectSizes
+      resultStatus: 1
+      duration: 0.000312
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1027
+      parentUniqueId: 'Tests.dll/[Tests][LayerTests][suite]'
+    m_ResultText: Neural Network Visualizer (44 tests) (0.024s)
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: b12eb4cf
+      m_LastClickedID: -810275151
+      m_ExpandedIDs: b12eb4cf7ab033e67f2eec3dffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_TrimLeadingAndTrailingWhitespace: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategories: []
+      availableCategories:
+      - Uncategorized
+    m_SelectedOption: 0
+  - m_Window: {fileID: 0}
+    runProgress:
+      RunGuid: 56a95d9a-123f-4cd8-bede-acf857ca58bd
+      ExecutionSettings:
+        m_TargetPlatform: 0
+        m_HasTargetPlatform: 0
+        filter:
+          testMode: 0
+          testNames: []
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        filters:
+        - testMode: 1
+          testNames: []
+          groupNames:
+          - .*
+          categoryNames: []
+          assemblyNames: []
+        runSynchronously: 0
+        playerHeartbeatTimeout: 600
+        orderedTestNames: []
+        ignoreTests: []
+        featureFlags:
+          fileCleanUpCheck: 0
+          requiresSplashScreen: 0
+          strictDomainReload: 0
+          disableNestedEnumeratorBugfix: 0
+        randomOrderSeed: 0
+      HasFinished: 1
+      Progress: 1.0000004
+      CurrentStepName: Unlock Reload Assemblies
+      CurrentStageName: 
+    m_NewResultList: []
+    m_ResultText: 
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_TrimLeadingAndTrailingWhitespace: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategories: []
+      availableCategories: []
+    m_SelectedOption: 0
+  - m_Window: {fileID: 0}
+    runProgress:
+      RunGuid: 56a95d9a-123f-4cd8-bede-acf857ca58bd
+      ExecutionSettings:
+        m_TargetPlatform: 0
+        m_HasTargetPlatform: 0
+        filter:
+          testMode: 0
+          testNames: []
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        filters:
+        - testMode: 1
+          testNames: []
+          groupNames:
+          - .*
+          categoryNames: []
+          assemblyNames: []
+        runSynchronously: 0
+        playerHeartbeatTimeout: 600
+        orderedTestNames: []
+        ignoreTests: []
+        featureFlags:
+          fileCleanUpCheck: 0
+          requiresSplashScreen: 0
+          strictDomainReload: 0
+          disableNestedEnumeratorBugfix: 0
+        randomOrderSeed: 0
+      HasFinished: 1
+      Progress: 1.0000004
+      CurrentStepName: Unlock Reload Assemblies
+      CurrentStageName: 
+    m_NewResultList: []
+    m_ResultText: 
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_TrimLeadingAndTrailingWhitespace: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategories: []
+      availableCategories: []
+    m_SelectedOption: 0
+--- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -296,15 +1488,15 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Package Manager
-    m_Image: {fileID: -2824328813065806953, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: 5076950121296946556, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
     m_TextWithWhitespace: "Package Manager\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 359
-    y: 79
-    width: 1108
-    height: 568
+    x: -1100
+    y: -1511
+    width: 2219
+    height: 914
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -316,7 +1508,7 @@ MonoBehaviour:
     m_SaveData: []
     m_ContainerData: []
     m_OverlaysVisible: 1
---- !u!114 &13
+--- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -332,15 +1524,15 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Scene
-    m_Image: {fileID: 2593428753322112591, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: 8634526014445323508, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 358
-    y: 103
-    width: 1108
-    height: 567
+    x: 275
+    y: 72
+    width: 848.5
+    height: 518.5
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -937,9 +2129,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 632.88074, y: 420.47092, z: 0}
+    m_Target: {x: 962.581, y: 495.3866, z: 3.6317534}
     speed: 2
-    m_Value: {x: 632.88074, y: 420.47092, z: 0}
+    m_Value: {x: 962.581, y: 495.3866, z: 3.6317534}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -989,9 +2181,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1007.4893
+    m_Target: 738.2786
     speed: 2
-    m_Value: 1007.4893
+    m_Value: 738.2786
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1012,7 +2204,7 @@ MonoBehaviour:
   m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_LastSceneViewOrtho: 0
   m_Viewpoint:
-    m_SceneView: {fileID: 13}
+    m_SceneView: {fileID: 14}
     m_CameraOverscanSettings:
       m_Opacity: 50
       m_Scale: 1
@@ -1025,7 +2217,7 @@ MonoBehaviour:
     name: Contributors / Receivers
     section: Lighting
   m_ViewIsLockedToObject: 0
---- !u!114 &14
+--- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1041,15 +2233,15 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Hierarchy
-    m_Image: {fileID: 7966133145522015247, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -3734745235275155857, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
     m_TextWithWhitespace: "Hierarchy\u200B"
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 24
-    width: 358
-    height: 567
+    y: 72
+    width: 274
+    height: 518.5
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1064,9 +2256,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: aac50000
+      m_SelectedIDs: a2c50000
       m_LastClickedID: 0
-      m_ExpandedIDs: 0efbffff
+      m_ExpandedIDs: 9e75ffff6676ffffaa9dffff78e5ffff80f6ffff0efbffff72c60000c2c70000e4c70000fccc0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1091,7 +2283,7 @@ MonoBehaviour:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
   m_WindowGUID: 4c969a2b90040154d917609493e03593
---- !u!114 &15
+--- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1107,15 +2299,15 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Game
-    m_Image: {fileID: -6423792434712278376, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: 4621777727084837110, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
     m_TextWithWhitespace: "Game\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 276
-    y: 101
-    width: 846
-    height: 448
+    x: 275
+    y: 72
+    width: 848.5
+    height: 518.5
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1148,10 +2340,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -960
-    m_HBaseRangeMax: 960
-    m_VBaseRangeMin: -540
-    m_VBaseRangeMax: 540
+    m_HBaseRangeMin: -480
+    m_HBaseRangeMax: 480
+    m_VBaseRangeMin: -270
+    m_VBaseRangeMax: 270
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -1169,30 +2361,30 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 846
-      height: 427
-    m_Scale: {x: 0.39537036, y: 0.39537036}
-    m_Translation: {x: 423, y: 213.5}
+      width: 848.5
+      height: 497.5
+    m_Scale: {x: 0.88385415, y: 0.88385415}
+    m_Translation: {x: 424.25, y: 248.75}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -1069.8829
-      y: -540
-      width: 2139.7659
-      height: 1080
+      x: -480
+      y: -281.43784
+      width: 960
+      height: 562.8757
     m_MinimalGUI: 1
-  m_defaultScale: 0.39537036
-  m_LastWindowPixelSize: {x: 846, y: 448}
+  m_defaultScale: 0.88385415
+  m_LastWindowPixelSize: {x: 1697, y: 1037}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
   m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
   m_showToolbar: 1
---- !u!114 &16
+--- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1208,15 +2400,15 @@ MonoBehaviour:
   m_MaxSize: {x: 10000, y: 10000}
   m_TitleContent:
     m_Text: Project
-    m_Image: {fileID: -5467254957812901981, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -5179483145760003458, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
     m_TextWithWhitespace: "Project\u200B"
   m_Pos:
     serializedVersion: 2
-    x: -1
-    y: 696
-    width: 1468
-    height: 322
+    x: 0
+    y: 616.5
+    width: 1124.5
+    height: 293.5
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1239,7 +2431,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Prefabs
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1249,17 +2441,17 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Bohot\Documents\GitHub\Neural-Network-Visualizer\Neural
+  m_LastProjectPath: /Users/matthewlee/Documents/GitHub/Neural-Network-Visualizer/Neural
     Network Visualizer
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 22c50000
-    m_LastClickedID: 50466
-    m_ExpandedIDs: 00000000bac4000000ca9a3b
+    m_SelectedIDs: 96c40000
+    m_LastClickedID: 50326
+    m_ExpandedIDs: 000000004cc300004ec3000050c3000052c3000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1288,7 +2480,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000bac40000
+    m_ExpandedIDs: 000000004cc300004ec3000050c3000052c3000054c30000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1314,8 +2506,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: aac50000
-    m_LastClickedInstanceID: 50602
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300005cbf0000301f0100442001003a2a01009ef50000183301001e3b01006a320100ba1d01008afa000088fa000082fa00007efa000080fa0000c4300100c02b0100a0f5000096ca0000ccc700000ec800000cc7000070ca0000c8c6000034c7000022cb0000a8cc000086c700008ac700008ec7000096c70000ca2e0100082f0100122f01008eac01000000000092d100003cca00006cca0000f4c90000c25d01008e5d0100b6d2000050cd000006c80000acd200005ec50000d4300100ca3001009ac700006cc5000054800000a49a00008cc10000e2b0000058b00000
     m_RenameOverlay:
@@ -1334,7 +2526,7 @@ MonoBehaviour:
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
-      m_ClientGUIView: {fileID: 10}
+      m_ClientGUIView: {fileID: 0}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -1346,7 +2538,7 @@ MonoBehaviour:
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 260
---- !u!114 &17
+--- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1362,15 +2554,15 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Console
-    m_Image: {fileID: -4327648978806127646, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -4950941429401207979, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
     m_TextWithWhitespace: "Console\u200B"
   m_Pos:
     serializedVersion: 2
-    x: -1
-    y: 696
-    width: 1468
-    height: 322
+    x: 0
+    y: 616.5
+    width: 1124.5
+    height: 293.5
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1382,7 +2574,7 @@ MonoBehaviour:
     m_SaveData: []
     m_ContainerData: []
     m_OverlaysVisible: 1
---- !u!114 &18
+--- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1398,15 +2590,15 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Inspector
-    m_Image: {fileID: -2667387946076563598, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -440750813802333266, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1468
-    y: 103
-    width: 450
-    height: 915
+    x: 1125.5
+    y: 72
+    width: 343.5
+    height: 838
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0

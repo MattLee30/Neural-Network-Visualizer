@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1810970227016476889}
   - component: {fileID: 3286956035896966676}
   - component: {fileID: 7502519219685279296}
+  - component: {fileID: 3107431878242085211}
   m_Layer: 0
   m_Name: Convolution Layer
   m_TagString: Untagged
@@ -124,3 +125,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e997850f51d3d49f1ad9b86da04a4a36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3107431878242085211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8823741678514858887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76017aa86d009b9429774a819ef931fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NewAssembly::Layer
