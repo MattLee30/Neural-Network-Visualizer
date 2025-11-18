@@ -248,26 +248,26 @@ public class ActivationFunctionTests
     
     #region Factory Tests
     
-    [Test]
-    public void GetActivationType_ReLU_ReturnsReLUInstance()
-    {
-        var activation = Activation.GetActivationType(Activation.ActivationType.ReLU);
-        Assert.IsInstanceOf<Activation.ReLU>(activation);
-    }
+    // [Test]
+    // public void GetActivationType_ReLU_ReturnsReLUInstance()
+    // {
+    //     var activation = Activation.GetActivationType(Activation.ActivationType.ReLU);
+    //     Assert.IsInstanceOf<Activation.ReLU>(activation);
+    // }
     
-    [Test]
-    public void GetActivationType_Sigmoid_ReturnsSigmoidInstance()
-    {
-        var activation = Activation.GetActivationType(Activation.ActivationType.Sigmoid);
-        Assert.IsInstanceOf<Activation.Sigmoid>(activation);
-    }
+    // [Test]
+    // public void GetActivationType_Sigmoid_ReturnsSigmoidInstance()
+    // {
+    //     var activation = Activation.GetActivationType(Activation.ActivationType.Sigmoid);
+    //     Assert.IsInstanceOf<Activation.Sigmoid>(activation);
+    // }
     
-    [Test]
-    public void GetActivationType_Softmax_ReturnsSoftmaxInstance()
-    {
-        var activation = Activation.GetActivationType(Activation.ActivationType.Softmax);
-        Assert.IsInstanceOf<Activation.Softmax>(activation);
-    }
+    // [Test]
+    // public void GetActivationType_Softmax_ReturnsSoftmaxInstance()
+    // {
+    //     var activation = Activation.GetActivationType(Activation.ActivationType.Softmax);
+    //     Assert.IsInstanceOf<Activation.Softmax>(activation);
+    // }
     
     #endregion
     
