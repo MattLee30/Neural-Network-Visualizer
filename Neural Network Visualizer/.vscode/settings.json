@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Neural Network Visualizer.sln"
+    "dotnet.defaultSolution": "Neural Network Visualizer.slnx"
 }
