@@ -1,10 +1,10 @@
-
 using static System.Math;
 using UnityEngine;
+using TMPro;
 using System.Diagnostics;
 
 
-public class Layer: MonoBehaviour
+public class Layer : MonoBehaviour
 {
     public readonly int numNodesIn;
     public readonly int numNodesOut;
@@ -19,6 +19,10 @@ public class Layer: MonoBehaviour
     public readonly double[] biasVelocities;
 
     public IActivation activation;
+
+    // InputField reference and stored number
+    [SerializeField] private TMP_InputField inputField;
+    private double storedNumber;
 
     public Layer(int numNodesIn, int numNodesOut, System.Random rng)
     {
@@ -35,6 +39,53 @@ public class Layer: MonoBehaviour
         biasVelocities = new double[biases.Length];
 
         InitializeRandomWeights(rng);
+    }
+
+    void Start()
+    {
+        // Add listener to capture input changes
+        if (inputField != null)
+        {
+            inputField.onEndEdit.AddListener(OnInputFieldChanged);
+        }
+    }
+
+    private void OnInputFieldChanged(string input)
+    {
+        // Try to parse the input as a number
+        if (double.TryParse(input, out double result))
+        {
+            storedNumber = result;
+            UnityEngine.Debug.Log($"Number stored in {gameObject.name}: {storedNumber}");
+        }
+        else
+        {
+            UnityEngine.Debug.LogWarning($"Invalid number input in {gameObject.name}!");
+        }
+    }
+
+    // Public method to get the stored number
+    public double GetStoredNumber()
+    {
+        return storedNumber;
+    }
+
+    // Public method to set the InputField reference (if creating layers dynamically)
+    public void SetInputField(TMP_InputField field)
+    {
+        // Remove old listener if exists
+        if (inputField != null)
+        {
+            inputField.onEndEdit.RemoveListener(OnInputFieldChanged);
+        }
+
+        inputField = field;
+
+        // Add new listener
+        if (inputField != null)
+        {
+            inputField.onEndEdit.AddListener(OnInputFieldChanged);
+        }
     }
 
     public double[] CalculateOutputs(double[] inputs)
@@ -83,7 +134,7 @@ public class Layer: MonoBehaviour
         return learnData.activations;
     }
 
-    
+
     public void ApplyGradients(double learnRate, double regularization, double momentum)
     {
         double weightDecay = (1 - regularization * learnRate);
@@ -143,7 +194,7 @@ public class Layer: MonoBehaviour
                 for (int nodeIn = 0; nodeIn < numNodesIn; nodeIn++)
                 {
                     double derivativeCostWrtWeight = layerLearnData.inputs[nodeIn] * nodeValue;
-                    
+
                     costGradientW[GetFlatWeightIndex(nodeIn, nodeOut)] += derivativeCostWrtWeight;
                 }
             }
@@ -189,6 +240,15 @@ public class Layer: MonoBehaviour
 
             double y1 = Sqrt(-2.0 * Log(x1)) * Cos(2.0 * PI * x2);
             return y1 * standardDeviation + mean;
+        }
+    }
+
+    void OnDestroy()
+    {
+        // Clean up listener
+        if (inputField != null)
+        {
+            inputField.onEndEdit.RemoveListener(OnInputFieldChanged);
         }
     }
 }
