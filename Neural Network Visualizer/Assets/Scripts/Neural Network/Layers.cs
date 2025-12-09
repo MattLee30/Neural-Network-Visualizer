@@ -251,4 +251,17 @@ public class Layer : MonoBehaviour
             inputField.onEndEdit.RemoveListener(OnInputFieldChanged);
         }
     }
+
+    public void SetStoredNumber(double number)
+    {
+        storedNumber = number;
+
+        // Optionally update the input field if it exists
+        if (inputField != null)
+        {
+            inputField.text = number.ToString();
+        }
+
+        UnityEngine.Debug.Log($"Number set in {gameObject.name}: {storedNumber}");
+    }
 }
