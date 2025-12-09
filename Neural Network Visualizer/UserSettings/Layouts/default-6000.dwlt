@@ -17,9 +17,9 @@ MonoBehaviour:
     x: 0
     y: 65
     width: 1470
-    height: 806
+    height: 803
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -45,7 +45,7 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1470
-    height: 806
+    height: 803
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 786
+    y: 783
     width: 1470
     height: 20
   m_MinSize: {x: 0, y: 0}
@@ -115,11 +115,11 @@ MonoBehaviour:
     x: 0
     y: 36
     width: 1470
-    height: 750
+    height: 747
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 89
+  controlID: 68
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -141,11 +141,11 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1125.5
-    height: 750
+    height: 747
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 90
+  controlID: 69
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -167,11 +167,11 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1125.5
-    height: 473
+    height: 471
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 91
+  controlID: 70
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -191,7 +191,7 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 275
-    height: 473
+    height: 471
   m_MinSize: {x: 201, y: 226}
   m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 15}
@@ -217,7 +217,7 @@ MonoBehaviour:
     x: 275
     y: 0
     width: 850.5
-    height: 473
+    height: 471
   m_MinSize: {x: 202, y: 226}
   m_MaxSize: {x: 4002, y: 4026}
   m_ActualView: {fileID: 14}
@@ -243,9 +243,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 473
+    y: 471
     width: 1125.5
-    height: 277
+    height: 276
   m_MinSize: {x: 231, y: 276}
   m_MaxSize: {x: 10001, y: 10026}
   m_ActualView: {fileID: 17}
@@ -272,7 +272,7 @@ MonoBehaviour:
     x: 1125.5
     y: 0
     width: 344.5
-    height: 750
+    height: 747
   m_MinSize: {x: 276, y: 76}
   m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 19}
@@ -304,9 +304,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 1125.5
-    y: 101
+    y: 72
     width: 343.5
-    height: 721
+    height: 838
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -319,12 +319,12 @@ MonoBehaviour:
     m_ContainerData: []
     m_OverlaysVisible: 1
   m_Spl:
-    ID: 125
+    ID: 10978
     splitterInitialOffset: 0
     currentActiveSplitter: -1
     realSizes:
-    - 488
-    - 163
+    - 576
+    - 192
     relativeSizes:
     - 0.75
     - 0.25
@@ -334,7 +334,7 @@ MonoBehaviour:
     maxSizes:
     - 0
     - 0
-    lastTotalSize: 651
+    lastTotalSize: 768
     splitSize: 6
     xOffset: 0
     m_Version: 1
@@ -383,7 +383,7 @@ MonoBehaviour:
       name: Neural Network Visualizer
       fullName: Neural Network Visualizer
       resultStatus: 1
-      duration: 0.0237437
+      duration: 0.015180999
       messages: 
       output: 
       stacktrace: 
@@ -394,14 +394,14 @@ MonoBehaviour:
       categories: []
       parentId: 
       parentUniqueId: 
-    - id: 1047
+    - id: 1044
       uniqueId: '[Tests][/Users/matthewlee/Documents/GitHub/Neural-Network-Visualizer/Neural
         Network Visualizer/Library/ScriptAssemblies/Tests.dll][suite]'
       name: Tests.dll
       fullName: /Users/matthewlee/Documents/GitHub/Neural-Network-Visualizer/Neural
         Network Visualizer/Library/ScriptAssemblies/Tests.dll
       resultStatus: 1
-      duration: 0.0237437
+      duration: 0.015180999
       messages: 
       output: 
       stacktrace: 
@@ -417,7 +417,7 @@ MonoBehaviour:
       name: ActivationFunctionTests
       fullName: ActivationFunctionTests
       resultStatus: 1
-      duration: 0.012959301
+      duration: 0.0043966
       messages: 
       output: 
       stacktrace: 
@@ -426,60 +426,9 @@ MonoBehaviour:
       description: 
       isSuite: 1
       categories: []
-      parentId: 1047
+      parentId: 1044
       parentUniqueId: '[Tests][/Users/matthewlee/Documents/GitHub/Neural-Network-Visualizer/Neural
         Network Visualizer/Library/ScriptAssemblies/Tests.dll][suite]'
-    - id: 1019
-      uniqueId: 'Tests.dll/ActivationFunctionTests/[Tests][ActivationFunctionTests.GetActivationType_ReLU_ReturnsReLUInstance]'
-      name: GetActivationType_ReLU_ReturnsReLUInstance
-      fullName: ActivationFunctionTests.GetActivationType_ReLU_ReturnsReLUInstance
-      resultStatus: 1
-      duration: 0.0083804
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1001
-      parentUniqueId: 'Tests.dll/[Tests][ActivationFunctionTests][suite]'
-    - id: 1020
-      uniqueId: 'Tests.dll/ActivationFunctionTests/[Tests][ActivationFunctionTests.GetActivationType_Sigmoid_ReturnsSigmoidInstance]'
-      name: GetActivationType_Sigmoid_ReturnsSigmoidInstance
-      fullName: ActivationFunctionTests.GetActivationType_Sigmoid_ReturnsSigmoidInstance
-      resultStatus: 1
-      duration: 0.0001128
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1001
-      parentUniqueId: 'Tests.dll/[Tests][ActivationFunctionTests][suite]'
-    - id: 1021
-      uniqueId: 'Tests.dll/ActivationFunctionTests/[Tests][ActivationFunctionTests.GetActivationType_Softmax_ReturnsSoftmaxInstance]'
-      name: GetActivationType_Softmax_ReturnsSoftmaxInstance
-      fullName: ActivationFunctionTests.GetActivationType_Softmax_ReturnsSoftmaxInstance
-      resultStatus: 1
-      duration: 0.0000695
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1001
-      parentUniqueId: 'Tests.dll/[Tests][ActivationFunctionTests][suite]'
     - id: 1006
       uniqueId: 'Tests.dll/ActivationFunctionTests/[Tests][ActivationFunctionTests.ReLU_Derivative_NegativeInput_ReturnsZero]'
       name: ReLU_Derivative_NegativeInput_ReturnsZero
@@ -837,7 +786,7 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1001
       parentUniqueId: 'Tests.dll/[Tests][ActivationFunctionTests][suite]'
-    - id: 1026
+    - id: 1023
       uniqueId: 'Tests.dll/[Tests][LayerTests][suite]'
       name: LayerTests
       fullName: LayerTests
@@ -851,7 +800,7 @@ MonoBehaviour:
       description: 
       isSuite: 1
       categories: []
-      parentId: 1047
+      parentId: 1044
       parentUniqueId: '[Tests][/Users/matthewlee/Documents/GitHub/Neural-Network-Visualizer/Neural
         Network Visualizer/Library/ScriptAssemblies/Tests.dll][suite]'
     - id: 1039
@@ -1304,7 +1253,7 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1027
       parentUniqueId: 'Tests.dll/[Tests][LayerTests][suite]'
-    m_ResultText: Neural Network Visualizer (44 tests) (0.024s)
+    m_ResultText: Neural Network Visualizer (41 tests) (0.015s)
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
@@ -1493,10 +1442,10 @@ MonoBehaviour:
     m_TextWithWhitespace: "Package Manager\u200B"
   m_Pos:
     serializedVersion: 2
-    x: -1100
-    y: -1511
-    width: 2219
-    height: 914
+    x: 275
+    y: 72
+    width: 848.5
+    height: 519
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1529,10 +1478,10 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 276
-    y: 24
+    x: 275
+    y: 101
     width: 848.5
-    height: 447
+    height: 445
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -2123,15 +2072,15 @@ MonoBehaviour:
   m_OverrideSceneCullingMask: 6917529027641081856
   m_SceneIsLit: 1
   m_SceneLighting: 1
-  m_2DMode: 1
+  m_2DMode: 0
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -5.542, y: 2.782318, z: -9.999231}
+    m_Target: {x: -0.5286676, y: 1.7130296, z: -0.019384459}
     speed: 2
-    m_Value: {x: -5.542, y: 2.782318, z: -9.999231}
+    m_Value: {x: -0.5286676, y: 1.7130296, z: -0.019384459}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -2159,17 +2108,17 @@ MonoBehaviour:
       m_Size: {x: 0, y: 0}
     yGrid:
       m_Fade:
-        m_Target: 0
+        m_Target: 1
         speed: 2
-        m_Value: 0
+        m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
     zGrid:
       m_Fade:
-        m_Target: 1
+        m_Target: 0
         speed: 2
-        m_Value: 1
+        m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
@@ -2177,17 +2126,17 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0, y: 0, z: 0, w: 1}
+    m_Target: {x: -0.31773704, y: -0.07187708, z: 0.024163572, w: -0.94514203}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0, w: 1}
+    m_Value: {x: -0.31773695, y: -0.07187706, z: 0.024163567, w: -0.9451418}
   m_Size:
-    m_Target: 11.168304
+    m_Target: 31.59335
     speed: 2
-    m_Value: 11.168304
+    m_Value: 31.59335
   m_Ortho:
-    m_Target: 1
+    m_Target: 0
     speed: 2
-    m_Value: 1
+    m_Value: 0
   m_CameraSettings:
     m_Speed: 1
     m_SpeedNormalized: 0.5
@@ -2201,7 +2150,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_LastSceneViewRotation: {x: -0.31773704, y: -0.07187708, z: 0.024163572, w: -0.94514203}
   m_LastSceneViewOrtho: 0
   m_Viewpoint:
     m_SceneView: {fileID: 14}
@@ -2239,9 +2188,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 24
+    y: 101
     width: 274
-    height: 447
+    height: 445
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -2256,9 +2205,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: bec10000
       m_LastClickedID: 0
-      m_ExpandedIDs: c0e6ffff14f6ffff0efbffff
+      m_ExpandedIDs: 0efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -2275,7 +2224,7 @@ MonoBehaviour:
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
-        m_ClientGUIView: {fileID: 8}
+        m_ClientGUIView: {fileID: 0}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -2305,9 +2254,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 275
-    y: 72
+    y: 101
     width: 848.5
-    height: 519
+    height: 445
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -2362,22 +2311,22 @@ MonoBehaviour:
       x: 0
       y: 21
       width: 848.5
-      height: 498
-    m_Scale: {x: 0.88385415, y: 0.88385415}
-    m_Translation: {x: 424.25, y: 249}
+      height: 424
+    m_Scale: {x: 0.78518516, y: 0.78518516}
+    m_Translation: {x: 424.25, y: 212}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -480
-      y: -281.7207
-      width: 960
-      height: 563.4414
+      x: -540.3184
+      y: -270
+      width: 1080.6368
+      height: 540
     m_MinimalGUI: 1
-  m_defaultScale: 0.88385415
-  m_LastWindowPixelSize: {x: 1697, y: 1038}
+  m_defaultScale: 0.78518516
+  m_LastWindowPixelSize: {x: 1697, y: 890}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -2406,9 +2355,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 497
+    y: 572
     width: 1124.5
-    height: 251
+    height: 250
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -2431,7 +2380,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Materials
+    - Assets
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -2441,17 +2390,17 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Materials
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/matthewlee/Documents/GitHub/Neural-Network-Visualizer/Neural
     Network Visualizer
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 56c50000
-    m_LastClickedID: 50518
-    m_ExpandedIDs: 0000000064c3000066c3000068c300006ac30000
+    scrollPos: {x: 0, y: 35}
+    m_SelectedIDs: 36c50000
+    m_LastClickedID: 50486
+    m_ExpandedIDs: 0000000036c5000038c500003ac500003cc500003ec5000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2480,7 +2429,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000064c3000066c3000068c300006ac30000
+    m_ExpandedIDs: 0000000036c5000038c500003ac500003cc500003ec50000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2508,7 +2457,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300005cbf0000301f0100442001003a2a01009ef50000183301001e3b01006a320100ba1d01008afa000088fa000082fa00007efa000080fa0000c4300100c02b0100a0f5000096ca0000ccc700000ec800000cc7000070ca0000c8c6000034c7000022cb0000a8cc000086c700008ac700008ec7000096c70000ca2e0100082f0100122f01008eac01000000000092d100003cca00006cca0000f4c90000c25d01008e5d0100b6d2000050cd000006c80000acd200005ec50000d4300100ca3001009ac700006cc5000054800000a49a00008cc10000e2b0000058b00000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -2560,9 +2509,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 616.5
+    y: 617
     width: 1124.5
-    height: 293.5
+    height: 293
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -2595,10 +2544,10 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1126.5
-    y: 24
+    x: 1125.5
+    y: 101
     width: 343.5
-    height: 724
+    height: 721
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
