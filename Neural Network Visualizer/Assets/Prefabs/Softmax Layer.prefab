@@ -69,7 +69,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7ff78ac47642247f3b8118ff71134272, type: 2}
+  - {fileID: 2100000, guid: 377534aab55c72946bd2b082d3b0e843, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -137,3 +137,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76017aa86d009b9429774a819ef931fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: NewAssembly::Layer
+  slider: {fileID: 0}

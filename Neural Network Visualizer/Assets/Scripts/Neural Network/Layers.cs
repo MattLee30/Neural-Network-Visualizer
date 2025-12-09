@@ -1,7 +1,9 @@
 using static System.Math;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 using System.Diagnostics;
+using System.Collections.Generic;
 
 
 public class Layer : MonoBehaviour
@@ -20,8 +22,8 @@ public class Layer : MonoBehaviour
 
     public IActivation activation;
 
-    // InputField reference and stored number
-    [SerializeField] private TMP_InputField inputField;
+    // Slider reference and stored number
+    [SerializeField] private Slider slider;
     private double storedNumber;
 
     public Layer(int numNodesIn, int numNodesOut, System.Random rng)
@@ -41,27 +43,69 @@ public class Layer : MonoBehaviour
         InitializeRandomWeights(rng);
     }
 
+    // Static counter for sequential naming
+    private static Dictionary<string, int> instanceCounts = new Dictionary<string, int>();
+
+    void Awake()
+    {
+        // Set custom name on instantiation
+        SetCustomName();
+    }
+
+    private void SetCustomName()
+    {
+        // Get the original prefab name (remove "(Clone)" if present)
+        string baseName = gameObject.name.Replace("(Clone)", "").Trim();
+        
+        // Increment counter for this base name
+        if (!instanceCounts.ContainsKey(baseName))
+        {
+            instanceCounts[baseName] = 0;
+        }
+        instanceCounts[baseName]++;
+        
+        // Set the new name
+        gameObject.name = $"{baseName}_{instanceCounts[baseName]}";
+        
+        UnityEngine.Debug.Log($"Created {gameObject.name}");
+    }
+
     void Start()
     {
-        // Add listener to capture input changes
-        if (inputField != null)
+        // Auto-assign slider if not set
+        if (slider == null)
         {
-            inputField.onEndEdit.AddListener(OnInputFieldChanged);
+            GameObject sliderObject = GameObject.FindGameObjectWithTag("layersize");
+            if (sliderObject != null)
+            {
+                slider = sliderObject.GetComponent<Slider>();
+                if (slider != null)
+                {
+                    UnityEngine.Debug.Log($"Auto-assigned slider from object with tag 'layersize' to {gameObject.name}");
+                }
+                else
+                {
+                    UnityEngine.Debug.LogWarning($"Object with tag 'layersize' found but has no Slider component!");
+                }
+            }
+            else
+            {
+                UnityEngine.Debug.LogWarning($"No GameObject with tag 'layersize' found for {gameObject.name}");
+            }
+        }
+        
+        // Add listener to capture slider changes
+        if (slider != null)
+        {
+            slider.onValueChanged.AddListener(OnSliderValueChanged);
         }
     }
 
-    private void OnInputFieldChanged(string input)
+    private void OnSliderValueChanged(float value)
     {
-        // Try to parse the input as a number
-        if (double.TryParse(input, out double result))
-        {
-            storedNumber = result;
-            UnityEngine.Debug.Log($"Number stored in {gameObject.name}: {storedNumber}");
-        }
-        else
-        {
-            UnityEngine.Debug.LogWarning($"Invalid number input in {gameObject.name}!");
-        }
+        // Store the slider value as a double
+        storedNumber = value;
+        UnityEngine.Debug.Log($"Number stored in {gameObject.name}: {storedNumber}");
     }
 
     // Public method to get the stored number
@@ -70,22 +114,36 @@ public class Layer : MonoBehaviour
         return storedNumber;
     }
 
-    // Public method to set the InputField reference (if creating layers dynamically)
-    public void SetInputField(TMP_InputField field)
+    // Public method to set the Slider reference (if creating layers dynamically)
+    public void SetSlider(Slider newSlider)
     {
         // Remove old listener if exists
-        if (inputField != null)
+        if (slider != null)
         {
-            inputField.onEndEdit.RemoveListener(OnInputFieldChanged);
+            slider.onValueChanged.RemoveListener(OnSliderValueChanged);
         }
 
-        inputField = field;
+        slider = newSlider;
 
         // Add new listener
-        if (inputField != null)
+        if (slider != null)
         {
-            inputField.onEndEdit.AddListener(OnInputFieldChanged);
+            slider.onValueChanged.AddListener(OnSliderValueChanged);
         }
+    }
+
+    // Public method to set the stored number programmatically
+    public void SetStoredNumber(double number)
+    {
+        storedNumber = number;
+
+        // Optionally update the slider if it exists
+        if (slider != null)
+        {
+            slider.value = (float)number;
+        }
+
+        UnityEngine.Debug.Log($"Number set in {gameObject.name}: {storedNumber}");
     }
 
     public double[] CalculateOutputs(double[] inputs)
@@ -246,22 +304,9 @@ public class Layer : MonoBehaviour
     void OnDestroy()
     {
         // Clean up listener
-        if (inputField != null)
+        if (slider != null)
         {
-            inputField.onEndEdit.RemoveListener(OnInputFieldChanged);
+            slider.onValueChanged.RemoveListener(OnSliderValueChanged);
         }
-    }
-
-    public void SetStoredNumber(double number)
-    {
-        storedNumber = number;
-
-        // Optionally update the input field if it exists
-        if (inputField != null)
-        {
-            inputField.text = number.ToString();
-        }
-
-        UnityEngine.Debug.Log($"Number set in {gameObject.name}: {storedNumber}");
     }
 }

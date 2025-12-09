@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class EditingUIManager : MonoBehaviour
 {
@@ -9,7 +10,8 @@ public class EditingUIManager : MonoBehaviour
     public GameObject editingUIPanel;
     public TMP_Text objectNameText;
     public TMP_Text storedNumberText;
-    public TMP_InputField editNumberInputField;
+    public Slider editNumberSlider;
+    public TMP_Text sliderValueText;
 
     private GameObject currentEditingObject;
     private Layer currentLayer;
@@ -17,11 +19,31 @@ public class EditingUIManager : MonoBehaviour
     private void Awake()
     {
         current = this;
-
+        
         // Hide UI panel at start
         if (editingUIPanel != null)
         {
             editingUIPanel.SetActive(false);
+        }
+
+        // Add slider listener
+        if (editNumberSlider != null)
+        {
+            // Set slider to whole numbers only
+            editNumberSlider.wholeNumbers = true;
+            editNumberSlider.onValueChanged.AddListener(OnSliderValueChanged);
+        }
+    }
+
+    private void OnSliderValueChanged(float value)
+    {
+        // Round to nearest whole number (extra safety)
+        int roundedValue = Mathf.RoundToInt(value);
+        
+        // Update the slider value text in real-time
+        if (sliderValueText != null)
+        {
+            sliderValueText.text = roundedValue.ToString();
         }
     }
 
@@ -29,7 +51,7 @@ public class EditingUIManager : MonoBehaviour
     {
         // Get the Layer component from the target object
         Layer layer = targetObject.GetComponent<Layer>();
-
+        
         if (layer == null)
         {
             Debug.LogWarning($"Object {targetObject.name} does not have a Layer component!");
@@ -42,17 +64,25 @@ public class EditingUIManager : MonoBehaviour
         // Update UI elements
         if (objectNameText != null)
         {
-            objectNameText.text = $"Editing: {targetObject.name}";
+            objectNameText.text = $"{targetObject.name}";
         }
+
+        double storedValue = layer.GetStoredNumber();
+        int roundedValue = Mathf.RoundToInt((float)storedValue);
 
         if (storedNumberText != null)
         {
-            storedNumberText.text = $"Current Value: {layer.GetStoredNumber()}";
+            storedNumberText.text = $"{roundedValue}";
         }
 
-        if (editNumberInputField != null)
+        if (editNumberSlider != null)
         {
-            editNumberInputField.text = layer.GetStoredNumber().ToString();
+            editNumberSlider.value = roundedValue;
+        }
+
+        if (sliderValueText != null)
+        {
+            sliderValueText.text = roundedValue.ToString();
         }
 
         // Show the panel
@@ -61,7 +91,7 @@ public class EditingUIManager : MonoBehaviour
             editingUIPanel.SetActive(true);
         }
 
-        Debug.Log($"Opened editing UI for {targetObject.name} with stored number: {layer.GetStoredNumber()}");
+        Debug.Log($"Opened editing UI for {targetObject.name} with stored number: {roundedValue}");
     }
 
     public void HideEditingUI()
@@ -78,23 +108,18 @@ public class EditingUIManager : MonoBehaviour
     // Call this method from a "Save" button in the UI
     public void SaveChanges()
     {
-        if (currentLayer != null && editNumberInputField != null)
+        if (currentLayer != null && editNumberSlider != null)
         {
-            if (double.TryParse(editNumberInputField.text, out double newValue))
+            int roundedValue = Mathf.RoundToInt(editNumberSlider.value);
+            
+            // Update the layer's stored number
+            currentLayer.SetStoredNumber(roundedValue);
+            Debug.Log($"Saved new value: {roundedValue} to {currentEditingObject.name}");
+            
+            // Update the display
+            if (storedNumberText != null)
             {
-                // Update the layer's stored number
-                currentLayer.SetStoredNumber(newValue);
-                Debug.Log($"Saved new value: {newValue} to {currentEditingObject.name}");
-
-                // Update the display
-                if (storedNumberText != null)
-                {
-                    storedNumberText.text = $"Current Value: {newValue}";
-                }
-            }
-            else
-            {
-                Debug.LogWarning("Invalid number format!");
+                storedNumberText.text = $"{roundedValue}";
             }
         }
     }
@@ -103,5 +128,14 @@ public class EditingUIManager : MonoBehaviour
     public void CloseEditingUI()
     {
         HideEditingUI();
+    }
+
+    private void OnDestroy()
+    {
+        // Clean up slider listener
+        if (editNumberSlider != null)
+        {
+            editNumberSlider.onValueChanged.RemoveListener(OnSliderValueChanged);
+        }
     }
 }
