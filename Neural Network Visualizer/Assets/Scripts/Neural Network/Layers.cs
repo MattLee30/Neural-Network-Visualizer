@@ -1,10 +1,12 @@
-
 using static System.Math;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 using System.Diagnostics;
+using System.Collections.Generic;
 
 
-public class Layer: MonoBehaviour
+public class Layer : MonoBehaviour
 {
     public readonly int numNodesIn;
     public readonly int numNodesOut;
@@ -19,6 +21,10 @@ public class Layer: MonoBehaviour
     public readonly double[] biasVelocities;
 
     public IActivation activation;
+
+    // Slider reference and stored number
+    [SerializeField] private Slider slider;
+    private double storedNumber;
 
     public Layer(int numNodesIn, int numNodesOut, System.Random rng)
     {
@@ -35,6 +41,109 @@ public class Layer: MonoBehaviour
         biasVelocities = new double[biases.Length];
 
         InitializeRandomWeights(rng);
+    }
+
+    // Static counter for sequential naming
+    private static Dictionary<string, int> instanceCounts = new Dictionary<string, int>();
+
+    void Awake()
+    {
+        // Set custom name on instantiation
+        SetCustomName();
+    }
+
+    private void SetCustomName()
+    {
+        // Get the original prefab name (remove "(Clone)" if present)
+        string baseName = gameObject.name.Replace("(Clone)", "").Trim();
+        
+        // Increment counter for this base name
+        if (!instanceCounts.ContainsKey(baseName))
+        {
+            instanceCounts[baseName] = 0;
+        }
+        instanceCounts[baseName]++;
+        
+        // Set the new name
+        gameObject.name = $"{baseName}_{instanceCounts[baseName]}";
+        
+        UnityEngine.Debug.Log($"Created {gameObject.name}");
+    }
+
+    void Start()
+    {
+        // Auto-assign slider if not set
+        if (slider == null)
+        {
+            GameObject sliderObject = GameObject.FindGameObjectWithTag("layersize");
+            if (sliderObject != null)
+            {
+                slider = sliderObject.GetComponent<Slider>();
+                if (slider != null)
+                {
+                    UnityEngine.Debug.Log($"Auto-assigned slider from object with tag 'layersize' to {gameObject.name}");
+                }
+                else
+                {
+                    UnityEngine.Debug.LogWarning($"Object with tag 'layersize' found but has no Slider component!");
+                }
+            }
+            else
+            {
+                UnityEngine.Debug.LogWarning($"No GameObject with tag 'layersize' found for {gameObject.name}");
+            }
+        }
+        
+        // Add listener to capture slider changes
+        if (slider != null)
+        {
+            slider.onValueChanged.AddListener(OnSliderValueChanged);
+        }
+    }
+
+    private void OnSliderValueChanged(float value)
+    {
+        // Store the slider value as a double
+        storedNumber = value;
+        UnityEngine.Debug.Log($"Number stored in {gameObject.name}: {storedNumber}");
+    }
+
+    // Public method to get the stored number
+    public double GetStoredNumber()
+    {
+        return storedNumber;
+    }
+
+    // Public method to set the Slider reference (if creating layers dynamically)
+    public void SetSlider(Slider newSlider)
+    {
+        // Remove old listener if exists
+        if (slider != null)
+        {
+            slider.onValueChanged.RemoveListener(OnSliderValueChanged);
+        }
+
+        slider = newSlider;
+
+        // Add new listener
+        if (slider != null)
+        {
+            slider.onValueChanged.AddListener(OnSliderValueChanged);
+        }
+    }
+
+    // Public method to set the stored number programmatically
+    public void SetStoredNumber(double number)
+    {
+        storedNumber = number;
+
+        // Optionally update the slider if it exists
+        if (slider != null)
+        {
+            slider.value = (float)number;
+        }
+
+        UnityEngine.Debug.Log($"Number set in {gameObject.name}: {storedNumber}");
     }
 
     public double[] CalculateOutputs(double[] inputs)
@@ -83,7 +192,7 @@ public class Layer: MonoBehaviour
         return learnData.activations;
     }
 
-    
+
     public void ApplyGradients(double learnRate, double regularization, double momentum)
     {
         double weightDecay = (1 - regularization * learnRate);
@@ -143,7 +252,7 @@ public class Layer: MonoBehaviour
                 for (int nodeIn = 0; nodeIn < numNodesIn; nodeIn++)
                 {
                     double derivativeCostWrtWeight = layerLearnData.inputs[nodeIn] * nodeValue;
-                    
+
                     costGradientW[GetFlatWeightIndex(nodeIn, nodeOut)] += derivativeCostWrtWeight;
                 }
             }
@@ -189,6 +298,15 @@ public class Layer: MonoBehaviour
 
             double y1 = Sqrt(-2.0 * Log(x1)) * Cos(2.0 * PI * x2);
             return y1 * standardDeviation + mean;
+        }
+    }
+
+    void OnDestroy()
+    {
+        // Clean up listener
+        if (slider != null)
+        {
+            slider.onValueChanged.RemoveListener(OnSliderValueChanged);
         }
     }
 }

@@ -4,7 +4,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager current;
 
-    public enum Mode { Spawning, Deleting, Moving, None }
+    public enum Mode { Spawning, Deleting, Moving, Editing, None }
     public static Mode activeMode = Mode.None;
 
     [Header("Spawn Settings")]
@@ -39,12 +39,11 @@ public class GameManager : MonoBehaviour
         targetRotation = cameraTransform.rotation;
         targetPosition = cameraTransform.position;
     }
-
     void Update()
     {
         // Handle camera rotation
         HandleCameraRotation();
-        
+
         // Handle camera movement
         HandleCameraMovement();
 
@@ -63,6 +62,10 @@ public class GameManager : MonoBehaviour
         else if (activeMode == Mode.Deleting && Input.GetMouseButtonDown(0))
         {
             DeleteObjectAtMouse();
+        }
+        else if (activeMode == Mode.Editing && Input.GetMouseButtonDown(0))
+        {
+            EditObjectAtMouse();
         }
     }
 
@@ -187,6 +190,11 @@ public class GameManager : MonoBehaviour
         SetMode(Mode.Moving);
     }
 
+    public void SetEditingMode()
+    {
+        SetMode(Mode.Editing);
+    }
+
     public void SetMode(Mode newMode)
     {
         if (activeMode == newMode)
@@ -205,6 +213,9 @@ public class GameManager : MonoBehaviour
             case Mode.Moving:
                 Debug.Log("Switched to Moving Mode - Drag objects to move them");
                 break;
+            case Mode.Editing:
+                Debug.Log("Switched to Editing Mode - Click Objects to edit them");
+                break;
             default:
                 Debug.Log("Unknown Mode");
                 break;
@@ -222,6 +233,31 @@ public class GameManager : MonoBehaviour
             {
                 Destroy(hit.collider.gameObject);
                 Debug.Log("Deleted object: " + hit.collider.name);
+            }
+        }
+    }
+
+    private void EditObjectAtMouse()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            // Check if the hit object has the MoveObject component (indicating it's a spawned object)
+            if (hit.collider.GetComponent<MoveObject>() != null)
+            {
+                // Check if it has a Layer component
+                Layer layer = hit.collider.GetComponent<Layer>();
+                if (layer != null)
+                {
+                    // Show the editing UI
+                    EditingUIManager.current.ShowEditingUI(hit.collider.gameObject);
+                }
+                else
+                {
+                    Debug.LogWarning($"Object {hit.collider.name} does not have a Layer component!");
+                }
             }
         }
     }

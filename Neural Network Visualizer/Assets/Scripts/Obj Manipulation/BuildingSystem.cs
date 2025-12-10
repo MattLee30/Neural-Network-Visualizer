@@ -15,6 +15,24 @@ public class BuildingSystem: MonoBehaviour
     [SerializeField] private GameObject previewObject;
     private GameObject activePreviewInstance;
 
+    [Header("Grid Visualization")]
+    [SerializeField] private bool showGridLines = true;
+    [SerializeField] private int gridWidth = 20;
+    [SerializeField] private int gridHeight = 20;
+    [SerializeField] private Material gridLineMaterial;
+    [SerializeField] private Color gridLineColor = new Color(0, 0, 0, 0.3f);
+    [SerializeField] private float gridLineWidth = 0.02f;
+
+    private GameObject gridLinesContainer;
+
+    private void Start()
+    {
+        if (showGridLines)
+        {
+            CreateGridLines();
+        }
+    }
+
     private void Awake() {
         current = this;
         grid = gridLayout.gameObject.GetComponent<Grid>();
@@ -59,5 +77,61 @@ public class BuildingSystem: MonoBehaviour
 
         GameObject newObject = Object.Instantiate(prefab, spawnPosition, Quaternion.identity);
         newObject.AddComponent<MoveObject>();
+    }
+
+    private void CreateGridLines()
+    {
+        gridLinesContainer = new GameObject("GridLines");
+        gridLinesContainer.transform.SetParent(transform);
+
+        // Create vertical lines
+        for (int x = -gridWidth; x <= gridWidth; x++)
+        {
+            GameObject lineObj = new GameObject($"VerticalLine_{x}");
+            lineObj.transform.SetParent(gridLinesContainer.transform);
+
+            LineRenderer line = lineObj.AddComponent<LineRenderer>();
+            line.material = gridLineMaterial;
+            line.startColor = gridLineColor;
+            line.endColor = gridLineColor;
+            line.startWidth = gridLineWidth;
+            line.endWidth = gridLineWidth;
+            line.positionCount = 2;
+
+            Vector3 start = gridLayout.CellToWorld(new Vector3Int(x, -gridHeight, 0));
+            Vector3 end = gridLayout.CellToWorld(new Vector3Int(x, gridHeight, 0));
+
+            line.SetPosition(0, start);
+            line.SetPosition(1, end);
+        }
+
+        // Create horizontal lines
+        for (int y = -gridHeight; y <= gridHeight; y++)
+        {
+            GameObject lineObj = new GameObject($"HorizontalLine_{y}");
+            lineObj.transform.SetParent(gridLinesContainer.transform);
+
+            LineRenderer line = lineObj.AddComponent<LineRenderer>();
+            line.material = gridLineMaterial;
+            line.startColor = gridLineColor;
+            line.endColor = gridLineColor;
+            line.startWidth = gridLineWidth;
+            line.endWidth = gridLineWidth;
+            line.positionCount = 2;
+
+            Vector3 start = gridLayout.CellToWorld(new Vector3Int(-gridWidth, y, 0));
+            Vector3 end = gridLayout.CellToWorld(new Vector3Int(gridWidth, y, 0));
+
+            line.SetPosition(0, start);
+            line.SetPosition(1, end);
+        }
+    }
+
+    public void ToggleGridLines(bool show)
+    {
+        if (gridLinesContainer != null)
+        {
+            gridLinesContainer.SetActive(show);
+        }
     }
 }
